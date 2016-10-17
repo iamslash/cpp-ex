@@ -1,3 +1,23 @@
+// Copyright (C) 2016 by iamslash
+
+/* assert example */
+#include <cstdio>      /* printf */
+#include <cassert>     /* assert */
+
+void print_number(int* myInt) {
+  assert(myInt != NULL);
+  printf("%d\n", *myInt);
+}
+
 int main() {
-    return 0;
+  int a = 10;
+  int * b = NULL;
+  int * c = NULL;
+
+  b = &a;
+
+  print_number(b);
+  print_number(c);
+
+  return 0;
 }
