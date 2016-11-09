@@ -30,6 +30,6 @@ int main() {
   // A a1(1);
   // A a_ = a0;
 
-  // not called operator= because of compiler optimization
+  // not called operator= because of RVO(return value optimization)
   A a = MakeA(0);
 }
