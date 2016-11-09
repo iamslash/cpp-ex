@@ -1,10 +1,14 @@
 # 
 CC  = c99
 CXX = g++
-CXXFLAGS = -std=c++11 # -fpermissive
+CXXFLAGS = -std=c++11 # -g
+# g++ -std=c++11 -g -c a.cpp
+# objdump -d -M intel -S a.o
 
 all: TAGS a.out
 
+a.dump: a.o
+	objdump -d -M intel -S $< > $@
 a.exe: a.o
 	$(CXX) $^ $(LDFLAGS) -o $@
 a.out: a.o
@@ -18,8 +22,7 @@ a.out: a.o
 TAGS:
 	-@gtags
 clean:
-	-rm -f *.o
+	-rm -f *.o *.dump *.exe *.out *.d
 	-rm -f core GPATH GRTAGS GSYMS GTAGS
-	-rm -f a.out
 
 -include $(wildcard *.d)
