@@ -111,5 +111,18 @@ int main() {
       std::cout << "suffix: [" << m.suffix() << "]\n";
     }
   }
+  std::cout << std::endl;
+  {
+    // std::string regx = R"(<\s*(\d+)\s*>((.|\n)*?)<\s*\1\s*>)";
+    std::string regx = R"(<(\d+)>((.|\n)*?)<\1\>)";
+    // std::string input = "<1>test1<1><2>Tes\nt2<2>sfsaf<3><4>test4<4>";
+    std::string input = "<1>test1<1><2>Tes\nt2<2>sfsaf<3><4> a b<4>";
+    std::smatch matches;
+    while (std::regex_search(input, matches, std::regex(regx)))
+    {
+      std::cout << matches[2] << std::endl;
+      input = matches.suffix().str();
+    }
+  }
   return 0;
 }
