@@ -14,7 +14,7 @@
 * [Value Categories](#value-categories)
 * [r-value reference](#r-value-reference)
 * [move constructor](#move-constructor)
-* [std::array](#std::array)
+* [array](#array)
 * [timer](#timer)
 * [regex](#regex)
 * [random](#random)
@@ -338,7 +338,7 @@ struct vector {
 };
 ```
 
-## std::array
+## array
 
 ```cpp
 array<int, 6> a = {1, 2, 3};
