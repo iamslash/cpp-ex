@@ -199,7 +199,7 @@ E = E * E;
   
 ## Value Categories
 
-~[](_img/value_category.png)
+![](_img/value_category.png)
 
 - [Value categories @ cppreference](http://en.cppreference.com/w/cpp/language/value_category)
 - lvalue
